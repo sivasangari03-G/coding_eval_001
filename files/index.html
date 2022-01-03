@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy</title>
+    <style>
+        body {
+            margin: auto;
+            background-color: black;
+        }
+        .nav {
+            position: fixed;
+            height: 100px;
+            background-color: black;
+            width: 100%;
+            display: flex;
+            border-bottom: 2px solid rgba(71, 70, 70, 0.582);
+        }
+        .logo {
+            width: 15%;
+            height: 50%;
+            margin: 20px;
+        }
+        button {
+            margin: 30%;
+            justify-content: center;
+            height: 20%;
+            width: 100px;
+            background-color: black;
+            color: rgba(255, 255, 255, 0.795);
+            /* border: 1px solid rgb(66, 66, 66); */
+            border: 0;
+            padding: 10px;
+            margin-left: 30px;
+            font-size: 20px;
+            
+        }
+        .space {
+            width: 50%;
+        }
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .container > img {
+            margin-top: 200px;
+            width: 20%
+
+        }
+        #restaurant {
+            display: grid;
+            grid-gap: 30px;
+            grid-template-rows: auto auto;
+            grid-template-columns: auto auto auto;
+            justify-content: space-evenly;
+            /* background: gray; */
+        }
+        #restaurant > div > img {
+            height: 200px;
+            width: 300px;
+            padding: 10px;
+        }
+        p {
+            color: white;
+            padding-left: 10px;
+            color: rgb(161, 161, 161);
+        }
+
+        .res {
+            /* background-color: gray; */
+            display: flex;
+            color: white;
+            font-size: 20px;
+            justify-content: space-around;
+            color: gray;
+            margin-bottom: 40px;
+        }
+        #restaurant > div {
+            border: 2px solid rgb(54, 53, 53);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        
+        <img class="logo" src="data:image/png;base64,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" alt="">
+        <div class="space"></div>
+        <div>
+            <button>Search</button>
+        </div>
+        <div>
+            <button>Offers</button>
+        </div>
+        <div>
+            <button>Login</button>
+        </div>
+        <div>
+            <button>Sign Up</button>
+        </div>
+        <div>
+            <button>Cart</button>
+        </div>
+    </div>
+    <div class="container">
+        <img src="./offer1.jpeg" alt="image1">
+        <img src="./offer2.jpeg" alt="image2">
+        <img src="./offer3.jpeg" alt="image3">
+        <img src="./offer4.jpeg" alt="image4">
+    </div>
+    <div style="margin-top: 100px;"></div>
+
+    <div class="res">
+        <div>188 Restaurants</div>
+        <div>rating</div>
+        <div>Delivery time</div>
+        <div>Relavance</div>
+    </div>
+    <!-- <hr> -->
+    <div id="restaurant">
+        <div>
+        <img src="./restaurant1.jpeg" alt="">
+        <p>pan Cake</p>
+        <p>American</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>3.9</p>
+            <p>.</p>
+            <p>26 mins</p>
+            <p>.</p>
+            <p>$30</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant2.jpeg" alt="">
+        <p>Pani Pori</p>
+        <p>North Indian</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>4.9</p>
+            <p>.</p>
+            <p>20 mins</p>
+            <p>.</p>
+            <p>$39</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant3.jpeg" alt="">
+        <p>Eat Snack</p>
+        <p>South Indian</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>3.0</p>
+            <p>.</p>
+            <p>15 mins</p>
+            <p>.</p>
+            <p>$15</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant4.jpeg" alt="">
+        <p>Only Fries</p>
+        <p>American</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>2.9</p>
+            <p>.</p>
+            <p>36 mins</p>
+            <p>.</p>
+            <p>$20</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant5.jpeg" alt="">
+        <p>Oven Stone</p>
+        <p>pizzas</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>4.2</p>
+            <p>.</p>
+            <p>26 mins</p>
+            <p>.</p>
+            <p>$40</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant6.jpeg" alt="">
+        <p>burger shop</p>
+        <p>American, Snacks</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>2.2</p>
+            <p>.</p>
+            <p>13 mins</p>
+            <p>.</p>
+            <p>$78</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant7.jpeg" alt="">
+        <p>spicy chicken</p>
+        <p>Chinese, Indian</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>1.9</p>
+            <p>.</p>
+            <p>10 mins</p>
+            <p>.</p>
+            <p>$10</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant8.jpeg" alt="">
+        <p>Rice bowl</p>
+        <p>Indian</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>3.5</p>
+            <p>.</p>
+            <p>26 mins</p>
+            <p>.</p>
+            <p>$18</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant9.jpeg" alt="">
+        <p>Only Healthy</p>
+        <p>South Indian, Snacks</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>3.3</p>
+            <p>.</p>
+            <p>50 mins</p>
+            <p>.</p>
+            <p>$27</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+        <div>
+        <img src="./restaurant10.jpeg" alt="">
+        <p>Biriyani Shop</p>
+        <p>North Indian, Punjabi, Biriyani</p>
+        <div style="display: flex; justify-content: space-around;">
+            <p>3.9</p>
+            <p>.</p>
+            <p>26 mins</p>
+            <p>.</p>
+            <p>$4</p>
+        </div>
+        <hr style="width: 90%;">
+        <div style="color: gray; padding: 10px;">50% offer use TRYNEW</div>
+        </div>
+</body>
+</html>
